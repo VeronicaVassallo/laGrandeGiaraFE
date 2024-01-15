@@ -1,0 +1,18 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import ErrorPage from "./pages/ErrorPage";
+function App() {
+	return (
+		<div>
+			<BrowserRouter>
+				<Routes>
+					<Route exact path="/" element={<Home />} />
+					<Route path="*" element={<ErrorPage />} />
+				</Routes>
+			</BrowserRouter>
+		</div>
+	);
+}
+
+export default App;
