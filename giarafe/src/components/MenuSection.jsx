@@ -1,20 +1,39 @@
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import pizza from "../assets/jumbotron2.jpg";
+import primipiatti from "../assets/primipiatti1.jpg";
+import antipasti from "../assets/antipasti2.jpg";
+import bibite from "../assets/bibite.jpg";
+import { Link } from "react-router-dom";
+import "../style.css";
 
 const MenuSection = () => {
 	return (
-		<Card style={{ width: "18rem" }}>
-			<Card.Img variant="top" src={pizza} />
-			<Card.Body>
-				<Card.Title>Card Title</Card.Title>
-				<Card.Text>
-					Some quick example text to build on the card title and make up the
-					bulk of the card's content.
-				</Card.Text>
-				<Button variant="primary">Go somewhere</Button>
-			</Card.Body>
-		</Card>
+		<div className="d-flex flex-lg-row justify-content-lg-around flex-column align-items-center">
+			<div className="menu">
+				<Link className="text-decoration-none" to={"/menuAntipasti"}>
+					<h4 className="card__title ">Antipasti</h4>
+					<img src={antipasti} alt="pizza" />
+				</Link>
+			</div>
+
+			<div className="menu">
+				<Link className="text-decoration-none" to={"/menuPizza"}>
+					<h4 className="card__title">Pizze</h4>
+					<img src={pizza} alt="pizza" />
+				</Link>
+			</div>
+			<div className="menu">
+				<Link className="text-decoration-none" to={"/menuPrimi"}>
+					<h4 className="card__title">Primi piatti</h4>
+					<img src={primipiatti} alt="pizza" />
+				</Link>
+			</div>
+			<div className="menu">
+				<Link className="text-decoration-none" to={"/menuBibite"}>
+					<h4 className="card__title">Bibite</h4>
+					<img src={bibite} alt="pizza" />
+				</Link>
+			</div>
+		</div>
 	);
 };
 
