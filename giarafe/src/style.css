@@ -1,3 +1,9 @@
+/*Home*/
+.bg_homepage {
+	background-color: #b7a6a6;
+	height: auto;
+}
+
 /*menu*/
 .menu img {
 	position: relative;
@@ -7,7 +13,7 @@
 	object-fit: cover;
 	overflow: hidden;
 	border-radius: 10%;
-	border: hotpink 3px solid;
+	border: #dc3545 3px solid;
 }
 
 .menu img:hover {
@@ -24,16 +30,21 @@
 
 /*specific menù*/
 .sizeimg {
-	width: 100px;
-	height: 100px;
+	width: 8em;
+	height: 8em;
 	border-radius: 20px;
+}
+.card_food {
+	padding: 15px;
+	border-bottom: solid 2px #dc3545;
 }
 
 /*jumbotron*/
-.jumbotron {
+.jumbotronMenu {
 	position: relative;
+	z-index: 3;
 	height: 55vh;
-	background: url("../src/assets/jumbotron.jpg") no-repeat center;
+	background: url("../src/assets/pizzaA.jpg") no-repeat center;
 	background-size: cover;
 	color: #ffffff;
 
@@ -41,7 +52,106 @@
 	align-items: center;
 }
 
-.jumbotron > h1 {
+/*.jumbotronMenu > h2 {
+	position: relative;
+	z-index: 4;
 	text-align: center;
 	text-shadow: 2px 2px #000000;
+	margin: auto;
+}*/
+
+/*Jumbotron Home*/
+.jumbotron {
+	width: 100%;
+	height: 55vh;
+	background-size: cover;
+}
+.jumbotron_img1 {
+	background: url("../src/assets/jumbotron.jpg") no-repeat center;
+}
+.jumbotron_img2 {
+	background: url("../src/assets/jumbotron0.jpg") no-repeat center;
+}
+.jumbotron_img3 {
+	background: url("../src/assets/jumbotron3.jpg") no-repeat center;
+}
+.title_jumbotron {
+	text-shadow: 2px 2px #000000;
+}
+.title_jumbotron > span {
+	font-size: 14pt;
+}
+.bodyJar {
+	position: relative;
+	top: -110px;
+	width: 60px;
+	height: 60px;
+	background-color: rgb(216, 135, 21);
+	border-radius: 50%;
+	z-index: 9;
+}
+.headJar {
+	width: 30px;
+	height: 30px;
+	background-color: rgb(216, 135, 21);
+	position: relative;
+	z-index: 8;
+	top: 0px;
+	left: 14px;
+}
+.sideJarR {
+	width: 30px;
+	height: 30px;
+	background-color: rgb(216, 135, 21);
+	border-radius: 50%;
+	position: relative;
+	z-index: 5;
+	left: 35px;
+	top: -25px;
+}
+.sideJarWhiteR {
+	width: 16px;
+	height: 16px;
+	background-color: #dc3545;
+	border-radius: 50%;
+	position: relative;
+	z-index: 10;
+	left: 43px;
+	top: -78px;
+}
+.sideJarL {
+	width: 30px;
+	height: 30px;
+	background-color: rgb(216, 135, 21);
+	border-radius: 50%;
+	position: relative;
+	z-index: 5;
+	left: -5px;
+	top: -55px;
+}
+.sideJarWhiteL {
+	width: 16px;
+	height: 16px;
+	background-color: #dc3545;
+	border-radius: 50%;
+	position: relative;
+	z-index: 10;
+	left: 1px;
+	top: -94px;
+}
+.goBack {
+	font-size: xx-large;
+	text-decoration: none;
+	font-weight: 800;
+	position: relative;
+	z-index: 8;
+	top: 15px;
+	left: 14px;
+	line-height: 100%;
+}
+.goBack:hover {
+	color: red;
+}
+.boxJar {
+	height: 2.7em;
 }

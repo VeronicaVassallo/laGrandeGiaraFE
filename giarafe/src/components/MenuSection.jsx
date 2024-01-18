@@ -7,7 +7,7 @@ import "../style.css";
 
 const MenuSection = () => {
 	return (
-		<div className="d-flex flex-lg-row justify-content-lg-around flex-column align-items-center">
+		<div className="d-flex flex-lg-row justify-content-lg-around flex-column align-items-center mb-5">
 			<div className="menu">
 				<Link className="text-decoration-none" to={"/menuAntipasti"}>
 					<h4 className="card__title ">Antipasti</h4>
