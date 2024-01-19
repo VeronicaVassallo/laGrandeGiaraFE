@@ -8,15 +8,15 @@ const Home = () => {
 		<div className="bg_homepage">
 			<p className="text-center">
 				<i class="bi bi-geo-alt"></i> {""} Via Pietro Nenni 69 (90014),
-				Casteldaccia
+				Casteldaccia, PA
 			</p>
 			<p className="text-center">
-				<i class="bi bi-clock"></i> {""}Da lunedi alla domenica (chiuso il
+				<i class="bi bi-clock"></i> {""}Da lunedì alla domenica (chiuso il
 				martedì)
 			</p>
 			<p className="text-center">
 				<i className="bi bi-telephone"></i>
-				{""} 327 1649057
+				{""}+39 327 1649057
 			</p>
 			<Jumbotron />
 			<h1 className="bg-danger text-center text-light">Menù</h1>
