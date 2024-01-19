@@ -19,7 +19,7 @@ const MenuPizza = () => {
 			<div className="d-flex flex-column align-items-center mb-5">
 				{pizzes.map((pizza) => (
 					<CardSectionMenu
-						_id={pizza.namePizza}
+						key={pizza.namePizza}
 						product={pizza.namePizza}
 						ingredients={pizza.ingredients}
 						prize={pizza.prize}

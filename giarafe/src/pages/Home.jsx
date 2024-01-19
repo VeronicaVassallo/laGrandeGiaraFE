@@ -11,7 +11,7 @@ const Home = () => {
 				Casteldaccia, PA
 			</p>
 			<p className="text-center">
-				<i class="bi bi-clock"></i> {""}Da lunedì alla domenica (chiuso il
+				<i className="bi bi-clock"></i> {""}Da lunedì alla domenica (chiuso il
 				martedì)
 			</p>
 			<p className="text-center">

@@ -11,7 +11,7 @@ const BottonJar = (prop) => {
 			<div className="sideJarWhiteL"></div>
 			<div className="bodyJar">
 				<Link className="goBack" to={prop.routePage}>
-					<i class="bi bi-arrow-left-circle"></i>
+					<i className="bi bi-arrow-left-circle"></i>
 				</Link>
 			</div>
 		</div>
