@@ -1,7 +1,59 @@
+import JumbotronMenu from "../components/JumbotronMenu";
+import { drinks, beers, wine } from "../products/drinks";
+import BottonJar from "../components/BottonJar";
+import CardSectionMenu from "../components/CardSectionMenu";
+import "../style.css";
+
 const MenuBibite = () => {
 	return (
 		<>
-			<h2>Le nostre bibite:</h2>
+			<div className="bg_homepage">
+				<div className="jumbotronMenu jumbotronMenuImg2 text-center">
+					<JumbotronMenu />
+				</div>
+				<h2 className="bg-danger p-2 d-flex align-items-center py-3 text-light">
+					{/*Puoi modificare la rotta di destinazione del pulsante BottonJar,
+				 modificando l'info della prop routePage  */}
+					<BottonJar routePage={"/"} />
+
+					<div>Le nostre bibite:</div>
+				</h2>
+				<div className="d-flex flex-column align-items-center mb-5">
+					{drinks.map((item) => (
+						<CardSectionMenu
+							key={item.nameProducts}
+							product={item.nameProducts}
+							prize={item.prize}
+							img={item.img}
+						/>
+					))}
+				</div>
+				<h2 className="bg-danger p-2">Birre</h2>
+				<div className="d-flex flex-column align-items-center mb-5">
+					{beers.map((item) => (
+						<CardSectionMenu
+							key={item.nameProducts}
+							product={item.nameProducts}
+							prize={item.prize}
+							img={item.img}
+						/>
+					))}
+				</div>
+				<h2 className="bg-danger p-2">Vini</h2>
+				<div className="d-flex flex-column align-items-center mb-5">
+					{wine.map((item) => (
+						<CardSectionMenu
+							key={item.nameProducts}
+							product={item.nameProducts}
+							prize={item.prize}
+							img={item.img}
+						/>
+					))}
+				</div>
+				<h2 className="bg-danger p-2 mb-0 text-light">
+					Amaro della casa o Limoncello 3,50€
+				</h2>
+			</div>
 		</>
 	);
 };

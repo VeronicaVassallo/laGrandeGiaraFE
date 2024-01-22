@@ -6,10 +6,10 @@ import "../style.css";
 const MenuPizza = () => {
 	return (
 		<div className="bg_homepage">
-			<div className="jumbotronMenu text-center">
+			<div className="jumbotronMenu jumbotronMenuImg1 text-center">
 				<JumbotronMenu />
 			</div>
-			<h2 className="bg-danger p-2 d-flex align-items-center py-3">
+			<h2 className="bg-danger p-2 d-flex align-items-center py-3 text-light">
 				{/*Puoi modificare la rotta di destinazione del pulsante BottonJar,
 				 modificando l'info della prop routePage  */}
 				<BottonJar routePage={"/"} />

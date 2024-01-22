@@ -1,6 +1,6 @@
 /*Home*/
 .bg_homepage {
-	background-color: #b7a6a6;
+	background-color: #700707;
 	height: auto;
 }
 
@@ -44,12 +44,19 @@
 	position: relative;
 	z-index: 3;
 	height: 55vh;
-	background: url("../src/assets/pizzaA.jpg") no-repeat center;
+	width: 100%;
 	background-size: cover;
 	color: #ffffff;
 
 	display: flex;
 	align-items: center;
+}
+.jumbotronMenuImg1 {
+	background: url("../src/assets/pizzaA.jpg") no-repeat center;
+}
+.jumbotronMenuImg2 {
+	background: url("../src/assets/jumbotron0.jpg") no-repeat center;
+	background-size: cover;
 }
 
 /*.jumbotronMenu > h2 {
@@ -68,6 +75,7 @@
 }
 .jumbotron_img1 {
 	background: url("../src/assets/jumbotron.jpg") no-repeat center;
+	background-size: cover;
 }
 .jumbotron_img2 {
 	background: url("../src/assets/jumbotron0.jpg") no-repeat center;

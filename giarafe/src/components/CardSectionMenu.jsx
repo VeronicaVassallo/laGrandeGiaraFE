@@ -2,7 +2,7 @@ import Card from "react-bootstrap/Card";
 
 const CardSectionMenu = (prop) => {
 	return (
-		<div className="card_food d-flex w-100 justify-content-between">
+		<div className="card_food d-flex w-100 justify-content-between text-light">
 			<div className="">
 				<Card.Body>
 					<Card.Title>{prop.product}</Card.Title>
