@@ -1,6 +1,7 @@
 import NavbarComponent from "../components/NavbarComponent";
 import Jumbotron from "../components/Jumbotron";
 import MenuSection from "../components/MenuSection";
+import InfoAllergen from "../components/InfoAllergen";
 import "../style.css";
 
 const Home = () => {
@@ -22,12 +23,9 @@ const Home = () => {
 
 			<h1 className="bg-danger text-center text-light">Menù</h1>
 			<div className="d-flex justify-content-center">
-				<div className="mx-3">Contatti</div>
-				<div className="mx-3">Eventi</div>
-				<div className="mx-3">
-					{" "}
-					Info allergeni <i className="bi bi-info-circle"></i>
-				</div>
+				<div className="mx-3 navMenu">Contatti</div>
+				<div className="mx-3 navMenu">Eventi</div>
+				<InfoAllergen />
 			</div>
 
 			<MenuSection />

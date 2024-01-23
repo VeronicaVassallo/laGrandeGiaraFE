@@ -3,6 +3,10 @@
 	background-color: #700707;
 	height: auto;
 }
+.navMenu:hover {
+	border-bottom: #ffffff solid 1px;
+	cursor: pointer;
+}
 
 /*menu*/
 .menu img {
