@@ -21,13 +21,13 @@ const Home = () => {
 			<Jumbotron />
 
 			<h1 className="bg-danger text-center text-light">Menù</h1>
-			<div className="d-flex justify-content-around">
-				<div>
+			<div className="d-flex justify-content-center">
+				<div className="mx-3">Contatti</div>
+				<div className="mx-3">Eventi</div>
+				<div className="mx-3">
 					{" "}
 					Info allergeni <i className="bi bi-info-circle"></i>
 				</div>
-				<div>Contatti</div>
-				<div>Eventi</div>
 			</div>
 
 			<MenuSection />
