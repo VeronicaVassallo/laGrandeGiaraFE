@@ -167,3 +167,15 @@
 .boxJar {
 	height: 2.7em;
 }
+
+/*icons allergen*/
+.iconAllergen {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: #700707 2px solid;
+	text-align: center;
+	padding: 2px;
+	color: #ffffff;
+	font-size: x-large;
+}

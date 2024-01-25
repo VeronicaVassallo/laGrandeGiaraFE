@@ -1,4 +1,3 @@
-import NavbarComponent from "../components/NavbarComponent";
 import Jumbotron from "../components/Jumbotron";
 import MenuSection from "../components/MenuSection";
 import InfoAllergen from "../components/InfoAllergen";

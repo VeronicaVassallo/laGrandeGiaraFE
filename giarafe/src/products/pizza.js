@@ -133,7 +133,7 @@ export const pizzes = [
 	},
 	{
 		namePizza: "Chicken",
-		ingredients: "Pomodoro, mozzarella, kebab, pollo, lattuga e salsa barbecue",
+		ingredients: "Pomodoro, mozzarella, pollo, lattuga e salsa barbecue",
 		prize: 8.5,
 		img: null,
 	},

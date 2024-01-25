@@ -1,6 +1,5 @@
 import { Container, Row } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
-import pizza from "../assets/jumbotron.jpg";
 import "../style.css";
 
 const Jumbotron = () => {

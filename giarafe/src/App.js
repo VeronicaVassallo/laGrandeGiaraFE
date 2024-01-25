@@ -6,6 +6,7 @@ import MenuAntipasti from "./pages/MenuAntipasti";
 import MenuPrimi from "./pages/MenuPrimi";
 import ErrorPage from "./pages/ErrorPage";
 import MenuBibite from "./pages/MenuBibite";
+
 function App() {
 	return (
 		<div>

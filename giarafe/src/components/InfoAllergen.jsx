@@ -32,7 +32,60 @@ const InfoAllergen = () => {
 						ingredienti presenti in essi che possono scatenare reazioni
 						allergiche in chi determinati soggetti predisposti.
 					</p>
-					<div></div>
+					<div className="bg-danger d-flex flex-wrap">
+						<div className="d-flex flex-column align-items-center">
+							<div className="iconAllergen">🐟</div>
+							<div>Pesce</div>
+						</div>
+						<div className="d-flex flex-column align-items-center">
+							<div className="iconAllergen">🐚</div>
+							<div>Molluschi</div>
+						</div>
+						<div className="d-flex flex-column align-items-center">
+							<div className="iconAllergen">🥛</div>
+							<div>Latticini</div>
+						</div>
+						<div className="d-flex flex-column align-items-center">
+							<div className="iconAllergen">🌾</div>
+							<div>Glutine</div>
+						</div>
+						<div className="d-flex flex-column align-items-center">
+							<div className="iconAllergen">🌰</div>
+							<div>Frutta a guscio</div>
+						</div>
+						<div className="d-flex flex-column align-items-center">
+							<div className="iconAllergen">🦀</div>
+							<div>Crostacei</div>
+						</div>
+						<div className="d-flex flex-column align-items-center">
+							<div className="iconAllergen">🟡</div>
+							<div>Lupini</div>
+						</div>
+						<div className="d-flex flex-column align-items-center">
+							<div className="iconAllergen">🥚</div>
+							<div>Uova</div>
+						</div>
+						<div className="d-flex flex-column align-items-center">
+							<div className="iconAllergen">SO₂</div>
+							<div>Anidride solforosa e solfiti</div>
+						</div>
+						<div className="d-flex flex-column align-items-center">
+							<div className="iconAllergen">🥒</div>
+							<div>Soia</div>
+						</div>
+						<div className="d-flex flex-column align-items-center">
+							<div className="iconAllergen">🥗</div>
+							<div>Sesamo</div>
+						</div>
+						<div className="d-flex flex-column align-items-center">
+							<div className="iconAllergen">🧉</div>
+							<div>Senape</div>
+						</div>
+						<div className="d-flex flex-column align-items-center">
+							<div className="iconAllergen">🥬</div>
+							<div>Sedano</div>
+						</div>
+					</div>
 					<p>
 						Se sai di essere un soggetto allergico, ti preghiamo di informare il
 						personale addetto alle ordinazioni e faremo il possibile per
