@@ -6,6 +6,7 @@ import MenuAntipasti from "./pages/MenuAntipasti";
 import MenuPrimi from "./pages/MenuPrimi";
 import ErrorPage from "./pages/ErrorPage";
 import MenuBibite from "./pages/MenuBibite";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 					<Route path="/menuPizza" element={<MenuPizza />} />
 					<Route path="/menuPrimi" element={<MenuPrimi />} />
 					<Route path="/menuBibite" element={<MenuBibite />} />
+					<Route path="/admin" element={<LoginPage />} />
 					<Route path="*" element={<ErrorPage />} />
 				</Routes>
 			</BrowserRouter>

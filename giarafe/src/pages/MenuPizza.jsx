@@ -9,14 +9,14 @@ const MenuPizza = () => {
 			<div className="jumbotronMenu jumbotronMenuImg1 text-center">
 				<JumbotronMenu />
 			</div>
-			<h2 className="bg-danger p-2 d-flex align-items-center py-3 text-light">
+			<h2 className="bg-red p-2 d-flex align-items-center py-3 text-light">
 				{/*Puoi modificare la rotta di destinazione del pulsante BottonJar,
 				 modificando l'info della prop routePage  */}
 				<BottonJar routePage={"/"} />
 
 				<div>Le nostre pizze:</div>
 			</h2>
-			<div className="d-flex flex-column align-items-center mb-5">
+			<div className="d-flex flex-column align-items-center mb-0">
 				{pizzes.map((pizza) => (
 					<CardSectionMenu
 						key={pizza.namePizza}

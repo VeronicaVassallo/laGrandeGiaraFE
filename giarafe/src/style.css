@@ -1,11 +1,12 @@
 /*Home*/
 .bg_homepage {
-	background-color: #700707;
+	background-color: #4e0808;
 	height: auto;
 }
 .navMenu:hover {
-	border-bottom: #ffffff solid 1px;
+	border-bottom: goldenrod solid 1px;
 	cursor: pointer;
+	color: gold;
 }
 
 /*menu*/
@@ -17,7 +18,7 @@
 	object-fit: cover;
 	overflow: hidden;
 	border-radius: 10%;
-	border: #dc3545 3px solid;
+	border: #d62410 3px solid;
 }
 
 .menu img:hover {
@@ -40,7 +41,7 @@
 }
 .card_food {
 	padding: 15px;
-	border-bottom: solid 2px #dc3545;
+	border-bottom: solid 2px #d62410;
 }
 
 /*jumbotron*/
@@ -124,7 +125,7 @@
 .sideJarWhiteR {
 	width: 16px;
 	height: 16px;
-	background-color: #dc3545;
+	background-color: #d62410;
 	border-radius: 50%;
 	position: relative;
 	z-index: 10;
@@ -144,7 +145,7 @@
 .sideJarWhiteL {
 	width: 16px;
 	height: 16px;
-	background-color: #dc3545;
+	background-color: #d62410;
 	border-radius: 50%;
 	position: relative;
 	z-index: 10;
@@ -162,7 +163,7 @@
 	line-height: 100%;
 }
 .goBack:hover {
-	color: red;
+	color: #d62410;
 }
 .boxJar {
 	height: 2.7em;
@@ -173,9 +174,24 @@
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	border: #700707 2px solid;
+	border: #4e0808 2px solid;
 	text-align: center;
 	padding: 2px;
 	color: #ffffff;
 	font-size: x-large;
+}
+.iconSize {
+	width: 26%;
+	height: 26%;
+	margin: 2px;
+	padding: 3px;
+	text-align: center;
+}
+.borderIcon {
+	border-radius: 5%;
+	background-color: #4e0808;
+	border: solid 4px #d62410;
+}
+.bg-red {
+	background-color: #d62410;
 }

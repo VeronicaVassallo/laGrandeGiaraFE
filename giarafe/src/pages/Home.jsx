@@ -20,7 +20,7 @@ const Home = () => {
 			</p>
 			<Jumbotron />
 
-			<h1 className="bg-danger text-center text-light">Menù</h1>
+			<h1 className="bg-red text-center text-light">Menù</h1>
 			<div className="d-flex justify-content-center">
 				<div className="mx-3 navMenu">Contatti</div>
 				<div className="mx-3 navMenu">Eventi</div>

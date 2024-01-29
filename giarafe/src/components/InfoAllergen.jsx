@@ -21,7 +21,7 @@ const InfoAllergen = () => {
 				backdrop="static"
 				keyboard={false}
 			>
-				<Modal.Header className="bg-danger text-light" closeButton>
+				<Modal.Header className="bg-red text-light" closeButton>
 					<Modal.Title>NOTA PER I CLIENTI</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
@@ -32,58 +32,61 @@ const InfoAllergen = () => {
 						ingredienti presenti in essi che possono scatenare reazioni
 						allergiche in chi determinati soggetti predisposti.
 					</p>
-					<div className="bg-danger d-flex flex-wrap">
-						<div className="d-flex flex-column align-items-center">
+					<div className="d-flex flex-wrap justify-content-around p-1 borderIcon text-light">
+						<div className="d-flex flex-column align-items-center  iconSize">
 							<div className="iconAllergen">🐟</div>
 							<div>Pesce</div>
 						</div>
-						<div className="d-flex flex-column align-items-center">
+						<div className="d-flex flex-column align-items-center  iconSize">
 							<div className="iconAllergen">🐚</div>
 							<div>Molluschi</div>
 						</div>
-						<div className="d-flex flex-column align-items-center">
+						<div className="d-flex flex-column align-items-center  iconSize">
 							<div className="iconAllergen">🥛</div>
 							<div>Latticini</div>
 						</div>
-						<div className="d-flex flex-column align-items-center">
+						<div className="d-flex flex-column align-items-center  iconSize">
 							<div className="iconAllergen">🌾</div>
 							<div>Glutine</div>
 						</div>
-						<div className="d-flex flex-column align-items-center">
-							<div className="iconAllergen">🌰</div>
-							<div>Frutta a guscio</div>
-						</div>
-						<div className="d-flex flex-column align-items-center">
+
+						<div className="d-flex flex-column align-items-center  iconSize">
 							<div className="iconAllergen">🦀</div>
 							<div>Crostacei</div>
 						</div>
-						<div className="d-flex flex-column align-items-center">
+						<div className="d-flex flex-column align-items-center  iconSize">
 							<div className="iconAllergen">🟡</div>
 							<div>Lupini</div>
 						</div>
-						<div className="d-flex flex-column align-items-center">
+						<div className="d-flex flex-column align-items-center  iconSize">
 							<div className="iconAllergen">🥚</div>
 							<div>Uova</div>
 						</div>
-						<div className="d-flex flex-column align-items-center">
-							<div className="iconAllergen">SO₂</div>
-							<div>Anidride solforosa e solfiti</div>
-						</div>
-						<div className="d-flex flex-column align-items-center">
+
+						<div className="d-flex flex-column align-items-center  iconSize">
 							<div className="iconAllergen">🥒</div>
 							<div>Soia</div>
 						</div>
-						<div className="d-flex flex-column align-items-center">
+						<div className="d-flex flex-column align-items-center  iconSize">
 							<div className="iconAllergen">🥗</div>
 							<div>Sesamo</div>
 						</div>
-						<div className="d-flex flex-column align-items-center">
+						<div className="d-flex flex-column align-items-center  iconSize">
 							<div className="iconAllergen">🧉</div>
 							<div>Senape</div>
 						</div>
-						<div className="d-flex flex-column align-items-center">
+						<div className="d-flex flex-column align-items-center  iconSize">
 							<div className="iconAllergen">🥬</div>
 							<div>Sedano</div>
+						</div>
+						<div className="d-flex flex-column align-items-center  iconSize">
+							<div className="iconAllergen">🌰</div>
+							<div className="text-center">Frutta a guscio</div>
+						</div>
+						<div className="d-flex flex-column align-items-center  iconSize">
+							<div className="iconAllergen">SO₂</div>
+							<div>Anidride solforosa</div>
+							<div> e solfiti</div>
 						</div>
 					</div>
 					<p>
@@ -94,9 +97,8 @@ const InfoAllergen = () => {
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant="secondary" onClick={handleClose}>
-						Close
+						Chiudi
 					</Button>
-					<Button variant="primary">Understood</Button>
 				</Modal.Footer>
 			</Modal>
 		</>
