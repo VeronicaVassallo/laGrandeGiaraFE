@@ -7,6 +7,7 @@ import MenuPrimi from "./pages/MenuPrimi";
 import ErrorPage from "./pages/ErrorPage";
 import MenuBibite from "./pages/MenuBibite";
 import LoginPage from "./pages/LoginPage";
+import Backoffice from "./pages/Backoffice";
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 					<Route path="/menuPrimi" element={<MenuPrimi />} />
 					<Route path="/menuBibite" element={<MenuBibite />} />
 					<Route path="/admin" element={<LoginPage />} />
+					<Route path="/backoffice" element={<Backoffice />} />
 					<Route path="*" element={<ErrorPage />} />
 				</Routes>
 			</BrowserRouter>

@@ -13,7 +13,7 @@ const MenuBibite = () => {
 				<div className="jumbotronMenu jumbotronMenuImg2 text-center">
 					<JumbotronMenu />
 				</div>
-				<h2 className="bg-red p-2 d-flex align-items-center py-3 text-light">
+				<h2 className="bg-red p-2 d-flex align-items-center py-3 text-light mb-0">
 					{/*Puoi modificare la rotta di destinazione del pulsante BottonJar,
 				 modificando l'info della prop routePage  */}
 					<BottonJar routePage={"/"} />
@@ -21,12 +21,7 @@ const MenuBibite = () => {
 					<div>Le nostre bibite:</div>
 				</h2>
 
-				<Tabs
-					defaultActiveKey="Bibite"
-					id="fill-tab-example"
-					className="mb-3"
-					fill
-				>
+				<Tabs defaultActiveKey="Bibite" id="fill-tab-example" fill>
 					<Tab eventKey="Bibite" title="Bibite">
 						<h2 className="bg-red p-2 text-light">Bibite</h2>
 						<div className="d-flex flex-column align-items-center">
