@@ -7,7 +7,7 @@ const Home = () => {
 	return (
 		<div className="bg_homepage text-light">
 			<p className="text-center">
-				<i class="bi bi-geo-alt"></i> {""} Via Pietro Nenni 69 (90014),
+				<i className="bi bi-geo-alt"></i> {""} Via Pietro Nenni 69 (90014),
 				Casteldaccia, PA
 			</p>
 			<p className="text-center">
