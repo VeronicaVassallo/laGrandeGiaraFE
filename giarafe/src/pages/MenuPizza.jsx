@@ -2,8 +2,21 @@ import JumbotronMenu from "../components/JumbotronMenu";
 import { pizzes } from "../products/pizza";
 import BottonJar from "../components/BottonJar";
 import CardSectionMenu from "../components/CardSectionMenu";
+
+//redux
+import { UseDispatch, useDispatch, useSelector } from "react-redux";
+import { allProducts, getProductsFromApi } from "../reducers/menuReducer";
 import "../style.css";
+import { useEffect } from "react";
 const MenuPizza = () => {
+	const completeProducts = useSelector(allProducts);
+
+	const dispatch = useDispatch();
+	console.log("ciao", completeProducts);
+
+	useEffect(() => {
+		dispatch(getProductsFromApi());
+	}, []);
 	return (
 		<div className="bg_homepage">
 			<div className="jumbotronMenu jumbotronMenuImg1 text-center">
