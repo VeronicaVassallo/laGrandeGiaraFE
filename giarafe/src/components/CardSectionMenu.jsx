@@ -3,11 +3,11 @@ import Card from "react-bootstrap/Card";
 const CardSectionMenu = (prop) => {
 	return (
 		<div className="card_food d-flex w-100  justify-content-between text-light">
-			<div className="">
+			<div>
 				<Card.Body>
 					<Card.Title>{prop.product}</Card.Title>
 					<Card.Text>{prop.ingredients}</Card.Text>
-					<Card.Text>{prop.prize}€</Card.Text>
+					<Card.Text>{prop.price}€</Card.Text>
 				</Card.Body>
 			</div>
 			<div>

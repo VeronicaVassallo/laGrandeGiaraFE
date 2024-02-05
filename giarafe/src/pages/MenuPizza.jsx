@@ -1,21 +1,27 @@
 import JumbotronMenu from "../components/JumbotronMenu";
-import { pizzes } from "../products/pizza";
 import BottonJar from "../components/BottonJar";
 import CardSectionMenu from "../components/CardSectionMenu";
 
 //redux
-import { UseDispatch, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { allProducts, getProductsFromApi } from "../reducers/menuReducer";
 import "../style.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 const MenuPizza = () => {
+	const [justPizza, setJustPizza] = useState([]);
 	const completeProducts = useSelector(allProducts);
 
+	const pizzaFiltered = async () => {
+		const filtered = await completeProducts.products.filter(
+			(t) => t.typology === "pizza"
+		);
+		setJustPizza(filtered);
+	};
 	const dispatch = useDispatch();
-	console.log("ciao", completeProducts);
 
 	useEffect(() => {
 		dispatch(getProductsFromApi());
+		pizzaFiltered();
 	}, []);
 	return (
 		<div className="bg_homepage">
@@ -30,15 +36,16 @@ const MenuPizza = () => {
 				<div>Le nostre pizze:</div>
 			</h2>
 			<div className="d-flex flex-column align-items-center mb-0">
-				{pizzes.map((pizza) => (
-					<CardSectionMenu
-						key={pizza.namePizza}
-						product={pizza.namePizza}
-						ingredients={pizza.ingredients}
-						prize={pizza.prize}
-						img={pizza.img}
-					/>
-				))}
+				{justPizza &&
+					justPizza.map((pizza) => (
+						<CardSectionMenu
+							key={pizza.productName}
+							product={pizza.productName}
+							ingredients={pizza.ingredients}
+							price={pizza.price}
+							img={pizza.img}
+						/>
+					))}
 			</div>
 		</div>
 	);

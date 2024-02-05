@@ -58,6 +58,7 @@
 }
 .jumbotronMenuImg1 {
 	background: url("../src/assets/pizzaA.jpg") no-repeat center;
+	background-size: cover;
 }
 .jumbotronMenuImg2 {
 	background: url("../src/assets/jumbotron0.jpg") no-repeat center;
@@ -84,9 +85,11 @@
 }
 .jumbotron_img2 {
 	background: url("../src/assets/jumbotron0.jpg") no-repeat center;
+	background-size: cover;
 }
 .jumbotron_img3 {
 	background: url("../src/assets/jumbotron3.jpg") no-repeat center;
+	background-size: cover;
 }
 .title_jumbotron {
 	text-shadow: 2px 2px #000000;
