@@ -14,7 +14,6 @@ const Backoffice = () => {
 
 	try {
 		const getData = async () => {
-			debugger;
 			const responce = await fetch(
 				`http://localhost:5050/product/${typologyValue}`
 			);
@@ -85,9 +84,7 @@ const Backoffice = () => {
 										<td>{p.productName}</td>
 										<td>{p.ingredients}</td>
 										<td>{p.price}</td>
-										<td>
-											<img src={p.img} alt="photo_product" />
-										</td>
+										<td>{p.img && <img src={p.img} alt="photo_product" />}</td>
 									</tr>
 								);
 							})}

@@ -44,8 +44,7 @@
 	border-bottom: solid 2px #d62410;
 }
 
-/*jumbotron*/
-.jumbotronMenu {
+.jumbotronMenuLabel {
 	position: relative;
 	z-index: 3;
 	height: 55vh;
@@ -56,6 +55,11 @@
 	display: flex;
 	align-items: center;
 }
+.jumbotronMenu img {
+	width: 100vw;
+	height: 40vh;
+	object-fit: cover;
+}
 .jumbotronMenuImg1 {
 	background: url("../src/assets/pizzaA.jpg") no-repeat center;
 	background-size: cover;
@@ -65,15 +69,17 @@
 	background-size: cover;
 }
 
-/*.jumbotronMenu > h2 {
-	position: relative;
-	z-index: 4;
-	text-align: center;
-	text-shadow: 2px 2px #000000;
-	margin: auto;
-}*/
-
 /*Jumbotron Home*/
+.positionLabelPageMenu {
+	position: absolute;
+	right: 15%;
+	top: 15%;
+	left: 15%;
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+	color: #fff;
+	text-align: center;
+}
 .jumbotron {
 	width: 100%;
 	height: 55vh;

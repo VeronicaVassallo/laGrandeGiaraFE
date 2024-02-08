@@ -10,7 +10,7 @@ const MenuBibite = () => {
 	return (
 		<>
 			<div className="bg_homepage">
-				<div className="jumbotronMenu jumbotronMenuImg2 text-center">
+				<div className="jumbotronMenuLabel jumbotronMenuImg2 text-center">
 					<JumbotronMenu />
 				</div>
 				<h2 className="bg-red p-2 d-flex align-items-center py-3 text-light mb-0">

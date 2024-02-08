@@ -10,11 +10,19 @@ const Addproduct = () => {
 	const handleShow = () => setShow(true);
 
 	const handleInpuntChange = (e) => {
-		const { name, value } = e.target;
-		setDataProduct({
-			...dataProduct,
-			[name]: value,
-		});
+		debugger;
+		const { name, value } = e.target; //valore input
+		if (value) {
+			setDataProduct({
+				...dataProduct,
+				[name]: value,
+			});
+		} else {
+			setDataProduct({
+				...dataProduct,
+				[name]: null,
+			});
+		}
 	};
 
 	const postData = async () => {

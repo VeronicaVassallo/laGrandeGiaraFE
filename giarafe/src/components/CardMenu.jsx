@@ -3,7 +3,7 @@ import "../style.css";
 
 const CardMenu = (prop) => {
 	return (
-		<div className="menu">
+		<div className="menu mx-5">
 			<Link className="text-decoration-none" to={prop.routeCard}>
 				<h4 className="card__title">{prop.tipology}</h4>
 				<img src={prop.img} alt={prop.altImg} />
