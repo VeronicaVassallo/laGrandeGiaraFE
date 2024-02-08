@@ -10,7 +10,6 @@ const Addproduct = () => {
 	const handleShow = () => setShow(true);
 
 	const handleInpuntChange = (e) => {
-		debugger;
 		const { name, value } = e.target; //valore input
 		if (value) {
 			setDataProduct({

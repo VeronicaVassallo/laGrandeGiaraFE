@@ -1,12 +1,23 @@
 import JumbotronMenu from "../components/JumbotronMenu";
-import { drinks, beers, wine } from "../products/drinks";
 import BottonJar from "../components/BottonJar";
 import CardSectionMenu from "../components/CardSectionMenu";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
+
+import { useDispatch, useSelector } from "react-redux";
+import { allProducts, getProductsFromApi } from "../reducers/menuReducer";
+import { useEffect } from "react";
 import "../style.css";
 
 const MenuBibite = () => {
+	let completeProducts = useSelector(allProducts);
+
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		debugger;
+		dispatch(getProductsFromApi());
+	}, []);
 	return (
 		<>
 			<div className="bg_homepage">
@@ -25,40 +36,52 @@ const MenuBibite = () => {
 					<Tab eventKey="Bibite" title="Bibite">
 						<h2 className="bg-red p-2 text-light">Bibite</h2>
 						<div className="d-flex flex-column align-items-center">
-							{drinks.map((item) => (
-								<CardSectionMenu
-									key={item.nameProducts}
-									product={item.nameProducts}
-									prize={item.prize}
-									img={item.img}
-								/>
-							))}
+							{completeProducts &&
+								completeProducts.products &&
+								completeProducts.products
+									.filter((t) => t.typology === "bibita")
+									.map((item) => (
+										<CardSectionMenu
+											key={item.productName}
+											product={item.productName}
+											price={item.price}
+											img={item.img}
+										/>
+									))}
 						</div>
 					</Tab>
 					<Tab eventKey="Birre" title="Birre">
 						<h2 className="bg-red p-2 text-light">Birre</h2>
 						<div className="d-flex flex-column align-items-center">
-							{beers.map((item) => (
-								<CardSectionMenu
-									key={item.nameProducts}
-									product={item.nameProducts}
-									prize={item.prize}
-									img={item.img}
-								/>
-							))}
+							{completeProducts &&
+								completeProducts.products &&
+								completeProducts.products
+									.filter((t) => t.typology === "birra")
+									.map((item) => (
+										<CardSectionMenu
+											key={item.productName}
+											product={item.productName}
+											price={item.price}
+											img={item.img}
+										/>
+									))}
 						</div>
 					</Tab>
 					<Tab eventKey="Vini" title="Vini">
 						<h2 className="bg-red p-2 text-light">Vini</h2>
 						<div className="d-flex flex-column align-items-center">
-							{wine.map((item) => (
-								<CardSectionMenu
-									key={item.nameProducts}
-									product={item.nameProducts}
-									prize={item.prize}
-									img={item.img}
-								/>
-							))}
+							{completeProducts &&
+								completeProducts.products &&
+								completeProducts.products
+									.filter((t) => t.typology === "vino")
+									.map((item) => (
+										<CardSectionMenu
+											key={item.productName}
+											product={item.productName}
+											price={item.price}
+											img={item.img}
+										/>
+									))}
 						</div>
 						<h2 className="bg-red p-2 mb-0 text-light">
 							Amaro della casa o Limoncello 3,50€

@@ -13,7 +13,7 @@ const MenuSection = () => {
 	return (
 		<div className="d-flex flex-wrap flex-lg-row justify-content-lg-around flex-column align-items-center pb-5">
 			<CardMenu
-				routeCard={"/menuAntipastiRustici"}
+				routeCard={"/menuAntipasti"}
 				tipology={"Antipasti"}
 				img={antipasti}
 				altImg={"img_appetizers"}

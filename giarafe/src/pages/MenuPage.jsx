@@ -2,7 +2,6 @@ import BottonJar from "../components/BottonJar";
 import CardSectionMenu from "../components/CardSectionMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { allProducts, getProductsFromApi } from "../reducers/menuReducer";
-import Carousel from "react-bootstrap/Carousel";
 import "../style.css";
 import { useEffect } from "react";
 const MenuPage = (props) => {
@@ -11,7 +10,7 @@ const MenuPage = (props) => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(getProductsFromApi()).then(() => {});
+		dispatch(getProductsFromApi());
 	}, []);
 	return (
 		<div className="bg_homepage">
@@ -37,13 +36,13 @@ const MenuPage = (props) => {
 					completeProducts.products &&
 					completeProducts.products
 						.filter((t) => t.typology === props.typologyProduct)
-						.map((pizza) => (
+						.map((singleProduct) => (
 							<CardSectionMenu
-								key={pizza.productName}
-								product={pizza.productName}
-								ingredients={pizza.ingredients}
-								price={pizza.price}
-								img={pizza.img}
+								key={singleProduct.productName}
+								product={singleProduct.productName}
+								ingredients={singleProduct.ingredients}
+								price={singleProduct.price}
+								img={singleProduct.img}
 							/>
 						))}
 			</div>
