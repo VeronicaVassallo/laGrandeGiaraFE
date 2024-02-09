@@ -31,7 +31,7 @@ const MenuSection = () => {
 				altImg={"img_pizza"}
 			/>
 			<CardMenu
-				routeCard={"/menuSchiacciate"}
+				routeCard={"/menuSchiacciateEmezzelune"}
 				tipology={"Schiacciate e Mezzelune"}
 				img={schiaccite}
 				altImg={"img_schiacciate"}

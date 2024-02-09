@@ -1,23 +1,12 @@
 import Jumbotron from "../components/Jumbotron";
 import MenuSection from "../components/MenuSection";
 import InfoAllergen from "../components/InfoAllergen";
+import { Footer } from "../components/Footer";
 import "../style.css";
 
 const Home = () => {
 	return (
 		<div className="bg_homepage text-light">
-			<p className="text-center">
-				<i className="bi bi-geo-alt"></i> {""} Via Pietro Nenni 69 (90014),
-				Casteldaccia, PA
-			</p>
-			<p className="text-center">
-				<i className="bi bi-clock"></i> {""}Da lunedì alla domenica (chiuso il
-				martedì)
-			</p>
-			<p className="text-center">
-				<i className="bi bi-telephone"></i>
-				{""}+39 327 1649057
-			</p>
 			<Jumbotron />
 
 			<h1 className="bg-red text-center text-light">Menù</h1>
@@ -28,6 +17,7 @@ const Home = () => {
 			</div>
 
 			<MenuSection />
+			<Footer />
 		</div>
 	);
 };
