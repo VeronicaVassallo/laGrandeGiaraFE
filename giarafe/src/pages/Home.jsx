@@ -6,12 +6,16 @@ import "../style.css";
 
 const Home = () => {
 	return (
-		<div className="bg_homepage text-light">
+		<div className="bg_homepage">
 			<Jumbotron />
 
 			<h1 className="bg-red text-center text-light">Menù</h1>
 			<div className="d-flex justify-content-center">
-				<div className="mx-3 navMenu">Contatti</div>
+				<div className="mx-3">
+					<a className="text-decoration-none navMenu" href="#contatti">
+						Contatti
+					</a>{" "}
+				</div>
 				<div className="mx-3 navMenu">Eventi</div>
 				<InfoAllergen />
 			</div>

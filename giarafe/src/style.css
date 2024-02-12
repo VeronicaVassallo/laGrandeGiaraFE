@@ -3,6 +3,9 @@
 	background-color: rgba(78, 8, 8, 1);
 	height: auto;
 }
+.navMenu {
+	color: #fff;
+}
 .navMenu:hover {
 	border-bottom: goldenrod solid 1px;
 	cursor: pointer;
@@ -263,4 +266,11 @@
 	width: 50%;
 	margin: auto;
 	font-size: x-large;
+}
+.imgFooter {
+	width: 50%;
+	height: 50%;
+}
+.imgFooter img {
+	width: 100%;
 }
