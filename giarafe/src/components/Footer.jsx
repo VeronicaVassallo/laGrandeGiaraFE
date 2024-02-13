@@ -6,9 +6,10 @@ export const Footer = () => {
 			<h1 id="contatti" className="bg-red text-center text-light mb-0">
 				Contatti :
 			</h1>
-			<footer className="py-3 containerFooter text-center text-light">
+			<footer className="py-3 containerFooter text-center text-light ">
 				<div className="d-flex align-items-center flex-column-reverse flex-lg-row justify-content-lg-center">
 					<div>
+						<hr className="text-light d-lg-none mx-5" />
 						<h5 className="text-uppercase">
 							<i class="bi bi-facebook"></i>{" "}
 							<i class="bi bi-instagram">
