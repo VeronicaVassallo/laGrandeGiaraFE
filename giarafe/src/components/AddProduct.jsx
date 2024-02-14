@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-
-//console.log("hello world", REACT_APP_ENVIRONMENT);
+import env from "react-dotenv";
 
 const Addproduct = () => {
 	const [show, setShow] = useState(false);
@@ -38,12 +37,13 @@ const Addproduct = () => {
 		fileData.append("img", img);
 
 		try {
-			debugger;
-			let baseURL = process.env.REACT_APP_SERVER_BASE_URL;
-			const response = await fetch(`${baseURL}/product/cloudUpload`, {
-				method: "POST",
-				body: fileData,
-			});
+			const response = await fetch(
+				`${env.REACT_APP_SERVER_BASE_URL}/product/cloudUpload`,
+				{
+					method: "POST",
+					body: fileData,
+				}
+			);
 
 			return await response.json();
 		} catch (e) {
@@ -56,7 +56,6 @@ const Addproduct = () => {
 
 	const postData = async () => {
 		try {
-			debugger;
 			let uploadImg = null;
 			if (fileImg) {
 				uploadImg = await uploadFileimg(fileImg);

@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import env from "react-dotenv";
 
 const initialState = {
 	products: [],
@@ -10,7 +11,7 @@ export const getProductsFromApi = createAsyncThunk(
 	"products/getAllProducts",
 	async () => {
 		try {
-			const responce = await fetch("http://localhost:5050/product");
+			const responce = await fetch(`${env.REACT_APP_SERVER_BASE_URL}/product`);
 			return await responce.json();
 		} catch (error) {
 			console.log(`Errore in menuReducer.js :${error}`);
