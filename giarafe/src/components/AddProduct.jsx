@@ -2,9 +2,14 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
+//console.log("hello world", REACT_APP_ENVIRONMENT);
+
 const Addproduct = () => {
 	const [show, setShow] = useState(false);
+
+	//cloudinary
 	const [dataProduct, setDataProduct] = useState({});
+	const [fileImg, setFileImg] = useState(null);
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
@@ -24,19 +29,63 @@ const Addproduct = () => {
 		}
 	};
 
+	const handleFileChange = (e) => {
+		setFileImg(e.target.files[0]);
+	};
+
+	const uploadFileimg = async (img) => {
+		const fileData = new FormData();
+		fileData.append("img", img);
+
+		try {
+			debugger;
+			let baseURL = process.env.REACT_APP_SERVER_BASE_URL;
+			const response = await fetch(`${baseURL}/product/cloudUpload`, {
+				method: "POST",
+				body: fileData,
+			});
+
+			return await response.json();
+		} catch (e) {
+			console.log(`Error during file upload: ${e}`);
+			alert(
+				`Errore durante l'upload del file, riprovare o chiamare  l'assistenza: ${e}`
+			);
+		}
+	};
+
 	const postData = async () => {
 		try {
-			const responce = await fetch("http://localhost:5050/product/create", {
+			debugger;
+			let uploadImg = null;
+			if (fileImg) {
+				uploadImg = await uploadFileimg(fileImg);
+			} else {
+				uploadImg = "";
+			}
+
+			const finalBody = {
+				productName: dataProduct.productName,
+				ingredients: dataProduct.ingredients,
+				price: dataProduct.price,
+				img: uploadImg.img,
+				typology: dataProduct.typology,
+			};
+			const response = await fetch("http://localhost:5050/product/create", {
 				headers: {
 					"Content-type": "application/json",
 				},
 				method: "POST",
-				body: JSON.stringify(dataProduct),
+				body: JSON.stringify(finalBody),
 			});
+			const data = await response.json();
+			alert("Prodotto caricato con successo!!!");
 			window.location.reload();
 		} catch (error) {
-			console.error(`Backoffice error:`, error);
-			alert("Errore durante l'operazione, riprovare o chiamare  l'assistenza");
+			console.log(`Backoffice error:`, error);
+			alert(
+				"Errore durante l'operazione, riprovare o chiamare  l'assistenza ciao"
+			);
 		}
 	};
 
@@ -97,10 +146,10 @@ const Addproduct = () => {
 						/>
 						<label htmlFor="img"> Cover:</label>
 						<input
-							type="text"
+							type="file"
 							name="img"
 							id="img"
-							onChange={handleInpuntChange}
+							onChange={handleFileChange}
 						/>
 					</form>
 				</Modal.Body>
