@@ -10,16 +10,58 @@ const Backoffice = () => {
 	const [typologyValue, setTypologyValue] = useState("pizza");
 	const [show, setShow] = useState(false);
 	const [idProductSelected, setIdProductSelected] = useState(""); //id prodotto selezionato
-	const [dataProductSelected, setDataProductSelected] = useState({});
+	const [dataProductSelected, setDataProductSelected] = useState({}); //dati prodotto selezionato
 
 	const handleClose = () => setShow(false);
 
+	//con questa funzione handleShow passo l'id del prodotto selezionato, e filtro solo il prodotto che ha questo id
 	const handleShow = (_id) => {
 		debugger;
 		setIdProductSelected(_id);
 		setShow(true);
 		const filterProduct = allProducts.filter((product) => product._id === _id);
 		setDataProductSelected(filterProduct[0]);
+	};
+	//Put
+
+	const handleChange = (e) => {
+		debugger;
+		const { name, value } = e.target; //valore input
+		if (value) {
+			setDataProductSelected({
+				...dataProductSelected,
+				[name]: value,
+			});
+		} else {
+			setDataProductSelected({
+				...dataProductSelected,
+				[name]: null,
+			});
+		}
+	};
+
+	const handlePutData = async (_id) => {
+		debugger;
+		try {
+			const response = await fetch(
+				`${env.REACT_APP_SERVER_BASE_URL}/product/modify/${_id}`,
+				{
+					headers: {
+						"Content-type": "application/json",
+					},
+					method: "PUT",
+					body: JSON.stringify(dataProductSelected),
+				}
+			);
+			const data = await response.json();
+			alert("Prodotto modificato con successo!!!");
+			window.location.reload();
+		} catch (error) {
+			console.log(`Backoffice error:`, error);
+			alert(
+				"Errore durante l'operazione, riprovare o chiamare  l'assistenza ciao"
+			);
+		}
 	};
 
 	//Cancella prodotto specifico in base all 'id
@@ -154,6 +196,7 @@ const Backoffice = () => {
 							id="productName"
 							defaultValue={dataProductSelected.productName}
 							target={dataProductSelected.productName}
+							onChange={handleChange}
 						/>
 						<label htmlFor="ingredients"> Ingredienti:</label>
 						<input
@@ -162,6 +205,7 @@ const Backoffice = () => {
 							id="ingredients"
 							defaultValue={dataProductSelected.ingredients}
 							target={dataProductSelected.ingredients}
+							onChange={handleChange}
 						/>
 						<label htmlFor="price"> Prezzo € :</label>
 						<input
@@ -170,19 +214,32 @@ const Backoffice = () => {
 							id="price"
 							defaultValue={dataProductSelected.price}
 							target={dataProductSelected.price}
+							onChange={handleChange}
 						/>
-						<label htmlFor="img"> Cover:</label>
-						<input type="file" name="img" id="img" />
+						<label htmlFor="img"> Cover attuale:</label>
+						<img
+							className="w-50 mx-auto my-3 imgModifyProduct"
+							src={dataProductSelected.img}
+							alt="img_cover"
+						/>
+						<p>Selezionare un file se si desidera modificare la cover</p>
+						<input type="file" name="img" id="img" onChange={handleChange} />
 					</form>
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant="danger" onClick={handleDeleteProduct}>
 						Elimina prodotto
 					</Button>
+
+					<Button
+						variant="primary"
+						onClick={() => handlePutData(idProductSelected)}
+					>
+						Salva modifica
+					</Button>
 					<Button variant="secondary" onClick={handleClose}>
 						Chiudi
 					</Button>
-					<Button variant="primary">Salva modifica</Button>
 				</Modal.Footer>
 			</Modal>
 		</div>

@@ -258,6 +258,9 @@
 .inputTable input {
 	margin: 5px;
 }
+.imgModifyProduct {
+	border-radius: 20%;
+}
 /*Footer*/
 .containerFooter {
 	background-color: #2c0404;
