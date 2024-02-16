@@ -2,6 +2,7 @@ import Jumbotron from "../components/Jumbotron";
 import MenuSection from "../components/MenuSection";
 import InfoAllergen from "../components/InfoAllergen";
 import { Footer } from "../components/Footer";
+import EventSection from "../components/EventSection";
 import "../style.css";
 
 const Home = () => {
@@ -16,11 +17,16 @@ const Home = () => {
 						Contatti
 					</a>{" "}
 				</div>
-				<div className="mx-3 navMenu">Eventi</div>
+				<div className="mx-3">
+					<a className="text-decoration-none navMenu" href="#eventi">
+						Eventi
+					</a>{" "}
+				</div>
 				<InfoAllergen />
 			</div>
 
 			<MenuSection />
+			<EventSection />
 			<Footer />
 		</div>
 	);

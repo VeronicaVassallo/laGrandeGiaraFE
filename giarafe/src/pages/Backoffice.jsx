@@ -11,6 +11,7 @@ const Backoffice = () => {
 	const [show, setShow] = useState(false);
 	const [idProductSelected, setIdProductSelected] = useState(""); //id prodotto selezionato
 	const [dataProductSelected, setDataProductSelected] = useState({}); //dati prodotto selezionato
+	const [fileImg, setFileImg] = useState(null); //file img da inviare su cloudinary
 
 	const handleClose = () => setShow(false);
 
@@ -22,7 +23,33 @@ const Backoffice = () => {
 		const filterProduct = allProducts.filter((product) => product._id === _id);
 		setDataProductSelected(filterProduct[0]);
 	};
-	//Put
+	//Put + cloudinary
+
+	const handleFileChange = (e) => {
+		setFileImg(e.target.files[0]);
+	};
+
+	const uploadFileimg = async (img) => {
+		const fileData = new FormData();
+		fileData.append("img", img);
+
+		try {
+			const response = await fetch(
+				`${env.REACT_APP_SERVER_BASE_URL}/product/cloudUpload`,
+				{
+					method: "POST",
+					body: fileData,
+				}
+			);
+
+			return await response.json();
+		} catch (e) {
+			console.log(`Error during file upload: ${e}`);
+			alert(
+				`Errore durante l'upload del file, riprovare o chiamare  l'assistenza: ${e}`
+			);
+		}
+	};
 
 	const handleChange = (e) => {
 		debugger;
@@ -43,6 +70,20 @@ const Backoffice = () => {
 	const handlePutData = async (_id) => {
 		debugger;
 		try {
+			let uploadImg = null;
+			if (fileImg) {
+				uploadImg = await uploadFileimg(fileImg);
+			} else {
+				uploadImg = "";
+			}
+
+			const finalBody = {
+				productName: dataProductSelected.productName,
+				ingredients: dataProductSelected.ingredients,
+				price: dataProductSelected.price,
+				img: uploadImg.img,
+				typology: dataProductSelected.typology,
+			};
 			const response = await fetch(
 				`${env.REACT_APP_SERVER_BASE_URL}/product/modify/${_id}`,
 				{
@@ -50,7 +91,7 @@ const Backoffice = () => {
 						"Content-type": "application/json",
 					},
 					method: "PUT",
-					body: JSON.stringify(dataProductSelected),
+					body: JSON.stringify(finalBody),
 				}
 			);
 			const data = await response.json();
@@ -223,7 +264,12 @@ const Backoffice = () => {
 							alt="img_cover"
 						/>
 						<p>Selezionare un file se si desidera modificare la cover</p>
-						<input type="file" name="img" id="img" onChange={handleChange} />
+						<input
+							type="file"
+							name="img"
+							id="img"
+							onChange={handleFileChange}
+						/>
 					</form>
 				</Modal.Body>
 				<Modal.Footer>

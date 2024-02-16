@@ -261,10 +261,26 @@
 .imgModifyProduct {
 	border-radius: 20%;
 }
+/*Event Section*/
+.containerImgEventSection {
+	width: 100vw;
+}
+.containerImgEventSection img {
+	width: 100%;
+	object-fit: cover;
+}
+@media screen and (min-width: 1200px) {
+	.containerImgEventSection img {
+		width: 65%;
+		padding: 2% 0px 2% 35%;
+	}
+}
+
 /*Footer*/
 .containerFooter {
-	background-color: #2c0404;
+	background-color: #200404;
 }
+
 .containerFooter h5 + p {
 	width: 50%;
 	margin: auto;
