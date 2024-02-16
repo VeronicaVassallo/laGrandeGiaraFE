@@ -254,6 +254,7 @@
 .tableBackOffice tbody tr:hover {
 	background-color: beige;
 	color: #000000;
+	cursor: pointer;
 }
 .inputTable input {
 	margin: 5px;
