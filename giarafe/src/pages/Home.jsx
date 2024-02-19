@@ -24,7 +24,6 @@ const Home = () => {
 				</div>
 				<InfoAllergen />
 			</div>
-
 			<MenuSection />
 			<EventSection />
 			<Footer />

@@ -1,11 +1,17 @@
 import BottonJar from "../components/BottonJar";
 import CardSectionMenu from "../components/CardSectionMenu";
+import Loader from "../components/Loader";
 import { useDispatch, useSelector } from "react-redux";
-import { allProducts, getProductsFromApi } from "../reducers/menuReducer";
+import {
+	allProducts,
+	getProductsFromApi,
+	isProductLoading,
+} from "../reducers/menuReducer";
 import "../style.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 const MenuPage = (props) => {
 	let completeProducts = useSelector(allProducts);
+	let isProductLoadingHere = useSelector(isProductLoading);
 
 	const dispatch = useDispatch();
 
@@ -31,6 +37,7 @@ const MenuPage = (props) => {
 
 				<div>{props.titleMenu}</div>
 			</h2>
+			{isProductLoadingHere ? <Loader /> : ""}
 			<div className="d-flex flex-column align-items-center mb-0">
 				{completeProducts &&
 					completeProducts.products &&

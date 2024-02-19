@@ -1,16 +1,22 @@
 import BottonJar from "../components/BottonJar";
 import CardSectionMenu from "../components/CardSectionMenu";
+import Loader from "../components/Loader";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 
 import { useDispatch, useSelector } from "react-redux";
-import { allProducts, getProductsFromApi } from "../reducers/menuReducer";
+import {
+	allProducts,
+	getProductsFromApi,
+	isProductLoading,
+} from "../reducers/menuReducer";
 import { useEffect } from "react";
 import "../style.css";
 
 const MenuForManyTypologies = (props) => {
 	let gatto = true;
 	let completeProducts = useSelector(allProducts);
+	let isProductLoadingHere = useSelector(isProductLoading);
 
 	const dispatch = useDispatch();
 
@@ -38,6 +44,7 @@ const MenuForManyTypologies = (props) => {
 					<div>{props.labelMenu}</div>
 				</h2>
 
+				{isProductLoadingHere ? <Loader /> : ""}
 				<Tabs defaultActiveKey={props.firstProduct} id="fill-tab-example" fill>
 					<Tab eventKey={props.firstProduct} title={props.firstProduct}>
 						<h2 className="bg-red p-2 text-light">{props.firstProduct}</h2>
