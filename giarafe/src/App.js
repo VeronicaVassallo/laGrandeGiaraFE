@@ -15,6 +15,7 @@ import schiacciata from "../src/assets/schiacciata.jpg";
 import MenuPage from "./pages/MenuPage";
 import MenuForManyTypologies from "./pages/MenuForManyTypologies";
 import pizza from "../src/assets/pizzaA.jpg";
+import ProtectedRoutes from "./middlewares/ProctededRoute";
 function App() {
 	return (
 		<div>
@@ -117,7 +118,10 @@ function App() {
 						}
 					/>
 					<Route path="/admin" element={<LoginPage />} />
-					<Route path="/backoffice" element={<Backoffice />} />
+					<Route element={<ProtectedRoutes />}>
+						<Route path="/backoffice" element={<Backoffice />} />
+					</Route>
+
 					<Route path="*" element={<ErrorPage />} />
 				</Routes>
 			</BrowserRouter>
