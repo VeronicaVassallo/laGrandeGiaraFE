@@ -33,6 +33,8 @@ const LoginPage = () => {
 			if (data.token) {
 				localStorage.setItem("loggedInUser", JSON.stringify(data.token));
 				navigate("/backoffice");
+			} else {
+				alert("Il nome utente o la password non sono correte");
 			}
 			setDataToken(data);
 		} catch (error) {

@@ -4,6 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import Addproduct from "../components/AddProduct";
 import env from "react-dotenv";
 import "../style.css";
+import BottonJar from "../components/BottonJar";
 
 const Backoffice = () => {
 	const [allProducts, setAllProducts] = useState([]); //prodotti tipologia specifica (es: solo le pizze)
@@ -141,11 +142,14 @@ const Backoffice = () => {
 
 	return (
 		<div className="loginPageSize">
+			<h2 className="bg-red  d-flex align-items-center pt-3 text-light">
+				<BottonJar routePage={"/admin"} />
+				<div>
+					<h2>Backoffice </h2>
+				</div>
+			</h2>
 			<div className="text-center text-light py-2">
 				<div className="d-flex justify-content-around align-items-center py-3">
-					<div>
-						<h2>Backoffice </h2>
-					</div>
 					<div>
 						<Addproduct />
 					</div>
