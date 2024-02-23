@@ -18,7 +18,6 @@ const Backoffice = () => {
 
 	//con questa funzione handleShow passo l'id del prodotto selezionato, e filtro solo il prodotto che ha questo id
 	const handleShow = (_id) => {
-		debugger;
 		setIdProductSelected(_id);
 		setShow(true);
 		const filterProduct = allProducts.filter((product) => product._id === _id);
@@ -53,7 +52,6 @@ const Backoffice = () => {
 	};
 
 	const handleChange = (e) => {
-		debugger;
 		const { name, value } = e.target; //valore input
 		if (value) {
 			setDataProductSelected({
@@ -69,7 +67,6 @@ const Backoffice = () => {
 	};
 
 	const handlePutData = async (_id) => {
-		debugger;
 		try {
 			let uploadImg = null;
 			if (fileImg) {
@@ -142,7 +139,7 @@ const Backoffice = () => {
 
 	return (
 		<div className="loginPageSize">
-			<h2 className="bg-red  d-flex align-items-center pt-3 text-light">
+			<h2 className="bg-red  d-flex align-items-center py-3 text-light">
 				<BottonJar routePage={"/admin"} />
 				<div>
 					<h2>Backoffice </h2>
