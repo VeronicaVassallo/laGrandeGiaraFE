@@ -83,7 +83,7 @@ const Addproduct = () => {
 		} catch (error) {
 			console.log(`Backoffice error:`, error);
 			alert(
-				"Errore durante l'operazione, riprovare o chiamare  l'assistenza ciao"
+				`Errore durante l'operazione, riprovare o chiamare  l'assistenza : ${error}`
 			);
 		}
 	};
